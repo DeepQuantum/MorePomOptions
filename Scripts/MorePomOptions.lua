@@ -14,6 +14,16 @@ ModUtil.LoadOnce(function ()
     end
 end)
 
+ModUtil.WrapBaseFunction( "GetAllUpgradeableGodTraits", function ( )
+    local traitNames = {}
+	for i, trait in pairs( CurrentRun.Hero.Traits ) do
+		if trait.RemainingUses == nil and (IsGodTrait(trait.Name) or string.find(trait.Name, "ChaosBlessing") or string.find(TraitData[trait.Name].Icon, "Hermes")) then
+			traitNames[trait.Name] = true
+		end
+	end
+	return traitNames
+end, MorePomOptions )
+
 --[[ TODO:
     -  Finish Chaos Boons
     -  Make it so that the Pom Menu correctly displays the values instead of the diminishing percent changes (@SetTraitTextData)
@@ -59,7 +69,7 @@ function OverrideTraits ()
     TraitData.FountainDamageBonusTrait.FountainDamageBonus.DecimalPlaces = 3
 
     -- Chaos
-    LootData.TrialUpgrade.GodLoot = true
+    --LootData.TrialUpgrade.GodLoot = true
     TraitData.ChaosBlessingMetapointTrait.MetaPointMultiplier.IdenticalMultiplier = { Value = -0.60, }
     TraitData.ChaosBlessingMoneyTrait.MoneyMultiplier.IdenticalMultiplier = { Value = -0.60, }
     TraitData.ChaosBlessingSecondaryTrait.AddOutgoingDamageModifiers.ValidWeaponMultiplier.IdenticalMultiplier = { Value = -0.50 }
@@ -72,7 +82,7 @@ function OverrideTraits ()
     TraitData.ChaosBlessingMaxHealthTrait.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
 
     -- Hermes
-    LootData.HermesUpgrade.GodLoot = true
+    --LootData.HermesUpgrade.GodLoot = true
     TraitData.HermesShoutDodge.RequiredFalseTraits = nil
     TraitData.MoveSpeedTrait.RequiredFalseTrait = nil
     TraitData.MoveSpeedTrait.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
@@ -81,4 +91,16 @@ function OverrideTraits ()
     TraitData.HermesSecondaryTrait.ExtractEntry.IdenticalMultiplier = { Value = -0.3 }
     TraitData.HermesWeaponTrait.ExtractEntry.IdenticalMultiplier = { Value = -0.8 }
     TraitData.HermesWeaponTrait.ExtractEntry.SourceIsMultiplier = true
+    TraitData.HermesShoutDodge.RequiredFalseTraits = nil
+    TraitData.HermesShoutDodge.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
+    TraitData.DodgeChanceTrait.RequiredFalseTrait = nil
+    TraitData.DodgeChanceTrait.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
+    TraitData.RapidCastTrait.RequiredFalseTraits = { "BowLoadAmmoTrait", "ShieldLoadAmmoTrait" }
+    TraitData.RapidCastTrait.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
+    TraitData.RushRallyTrait.RequiredFalseTrait = nil
+    TraitData.RushRallyTrait.PropertyChanges[4].IdenticalMultiplier = { Value = -0.60 }
+    TraitData.SpeedDamageTrait.AddOutgoingDamageModifiers.SpeedDamageMultiplier.IdenticalMultiplier = { Value = -0.60 }
+    TraitData.ChamberGoldTrait.RequiredFalseTraits = nil
+    TraitData.ChamberGoldTrait.MoneyPerRoom.ToNearest = 1
+    TraitData.ChamberGoldTrait.MoneyPerRoom.IdenticalMultiplier = { Value = -0.60 }
 end
