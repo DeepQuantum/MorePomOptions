@@ -1,6 +1,7 @@
 ModUtil.RegisterMod("MorePomOptions")
 
 local config = {
+    ModName = "MorePomOptions",
     Enabled = true,
 }
 MorePomOptions.config = config
@@ -27,14 +28,14 @@ end, MorePomOptions )
 
 --[[ TODO:
     -  Make it so that the Pom Menu correctly displays the values instead of the diminishing percent changes (@SetTraitTextData)
-    -  Finish Hermes Boons
-    -  Revisit "Unsellable boons" (Demeter)
     -  Revisit Legendary/Duo Boons
     -  Test
     -  Release
 --]]
+
 function OverrideTraits ()
-    ModUtil.MapNilTable(TraitData, {
+    ModUtil.MapNilTable(TraitData,
+    {
         RoomRewardBonusTrait = { RequiredFalseTraits = true },
         HealthRewardBonusTrait = { RequiredFalseTraits = true },
         AphroditePotencyTrait = { RequiredFalseTrait = true },
@@ -49,13 +50,15 @@ function OverrideTraits ()
         FountainDamageBonusTrait = { RequiredFalseTrait = true },
         HermesShoutDodge = { RequiredFalseTraits = true },
         MoveSpeedTrait = { RequiredFalseTrait = true },
+        SpeedDamageTrait = { RequiredFalseTraits = true },
         HermesSecondaryTrait = { RequiredFalseTraits = true },
         DodgeChanceTrait = { RequiredFalseTrait = true },
         RushRallyTrait = { RequiredFalseTrait = true },
         ChamberGoldTrait = { RequiredFalseTraits = true },
     })
 
-    ModUtil.MapSetTable(TraitData, {
+    ModUtil.MapSetTable(TraitData,
+    {
         AphroditeRangedBonusTrait =
         {
             RequiredFalseTraits = { "ShieldLoadAmmoTrait" },
@@ -127,7 +130,7 @@ function OverrideTraits ()
                 {
                     IdenticalMultiplier =
                     {
-                        Value = -0.35
+                        Value = -0.50
                     }
                 }
             }
@@ -280,7 +283,7 @@ function OverrideTraits ()
                 {
                     IdenticalMultiplier =
                     {
-                        Value = -0.70
+                        Value = -0.50
                     }
                 }
             }
@@ -326,7 +329,6 @@ function OverrideTraits ()
         {
             ExtractEntry =
             {
-                SourceIsMultiplier = true,
                 IdenticalMultiplier =
                 {
                     Value = -0.80
@@ -339,7 +341,27 @@ function OverrideTraits ()
             {
                 [1] =
                 {
-                    SourceIsMultiplier = true,
+                    IdenticalMultiplier =
+                    {
+                        Value = -0.60
+                    }
+                },
+                [2] =
+                {
+                    IdenticalMultiplier =
+                    {
+                        Value = -0.60
+                    }
+                },
+                [3] =
+                {
+                    IdenticalMultiplier =
+                    {
+                        Value = -0.60
+                    }
+                },
+                [4] =
+                {
                     IdenticalMultiplier =
                     {
                         Value = -0.60
@@ -391,50 +413,32 @@ function OverrideTraits ()
                     Value = -0.60
                 }
             }
-        }
+        },
+        DodgeChanceTrait =
+        {
+            PropertyChanges =
+            {
+                [1] =
+                {
+                    IdenticalMultiplier =
+                    {
+                        Value = -0.60
+                    }
+                }
+            }
+        },
+        RushRallyTrait =
+        {
+            PropertyChanges =
+            {
+                [4] =
+                {
+                    IdenticalMultiplier =
+                    {
+                        Value = -0.60
+                    }
+                }
+            }
+        },
     })
-    -- Hermes
-    --TraitData.MoveSpeedTrait.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.MoveSpeedTrait.PropertyChanges[1].SourceIsMultiplier = true
-    --TraitData.HermesSecondaryTrait.ExtractEntry.IdenticalMultiplier = { Value = -0.3 }
-    --TraitData.HermesWeaponTrait.ExtractEntry.IdenticalMultiplier = { Value = -0.8 }
-    --TraitData.HermesWeaponTrait.ExtractEntry.SourceIsMultiplier = true
-    --TraitData.HermesShoutDodge.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.DodgeChanceTrait.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.RapidCastTrait.RequiredFalseTraits = { "BowLoadAmmoTrait", "ShieldLoadAmmoTrait" }
-    --TraitData.RapidCastTrait.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.RushRallyTrait.PropertyChanges[4].IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.SpeedDamageTrait.AddOutgoingDamageModifiers.SpeedDamageMultiplier.IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.ChamberGoldTrait.MoneyPerRoom.ToNearest = 1
-    --TraitData.ChamberGoldTrait.MoneyPerRoom.IdenticalMultiplier = { Value = -0.60 }
-    --
-    ---- Chaos
-    --TraitData.ChaosBlessingMetapointTrait.MetaPointMultiplier.IdenticalMultiplier = { Value = -0.60, }
-    --TraitData.ChaosBlessingMoneyTrait.MoneyMultiplier.IdenticalMultiplier = { Value = -0.60, }
-    --TraitData.ChaosBlessingSecondaryTrait.AddOutgoingDamageModifiers.ValidWeaponMultiplier.IdenticalMultiplier = { Value = -0.50 }
-    --TraitData.ChaosBlessingMeleeTrait.AddOutgoingDamageModifiers.ValidWeaponMultiplier.IdenticalMultiplier = { Value = -0.50 }
-    --TraitData.ChaosBlessingRangedTrait.AddOutgoingDamageModifiers.ValidWeaponMultiplier.IdenticalMultiplier = { Value = -0.50 }
-    --TraitData.ChaosBlessingAlphaStrikeTrait.AddOutgoingDamageModifiers.HitMaxHealthMultiplier.IdenticalMultiplier = { Value = -0.50 }
-    --TraitData.ChaosBlessingBackstabTrait.AddOutgoingDamageModifiers.HitVulnerabilityMultiplier.IdenticalMultiplier = { Value = -0.50 }
-    --TraitData.ChaosBlessingDashAttackTrait.AddOutgoingDamageModifiers.ValidWeaponMultiplier.IdenticalMultiplier = { Value = -0.50 }
-    --TraitData.ChaosBlessingBoonRarityTrait.RarityBonus.RareBonus.IdenticalMultiplier = { Value = -0.70 }
-    --TraitData.ChaosBlessingMaxHealthTrait.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.AphroditeRangedBonusTrait.RequiredFalseTraits = { "ShieldLoadAmmoTrait" }
-    --TraitData.AphroditeRangedBonusTrait.AddOutgoingDamageModifiers.HitMaxHealthMultiplier = { BaseValue = 1.5, SourceIsMultiplier = true, IdenticalMultiplier = { Value = -0.60, }, }
-    --TraitData.AresDragTrait.PropertyChanges[10].BaseValue = 0.20
-    --TraitData.AresDragTrait.PropertyChanges[10].SourceIsMultiplier = false
-    --TraitData.AresDragTrait.PropertyChanges[10].IdenticalMultiplier = { Value = -0.35 }
-    --TraitData.AresDragTrait.PropertyChanges[10].ExtractValue = { ExtractAs = "TooltipDuration", DecimalPlaces = 2 }
-    --TraitData.AresDragTrait.PropertyChanges[11].BaseValue = 0.20
-    --TraitData.AresDragTrait.PropertyChanges[11].SourceIsMultiplier = false
-    --TraitData.AresDragTrait.PropertyChanges[11].IdenticalMultiplier = { Value = -0.35 }
-    --TraitData.AresDragTrait.PropertyChanges[11].ExtractValue = { ExtractAs = "TooltipDuration", DecimalPlaces = 2 }
-    --TraitData.AresLoadCurseTrait.PropertyChanges[5].IdenticalMultiplier = { Value = -0.8 }
-    --TraitData.MaximumChillBlast.PropertyChanges[1].IdenticalMultiplier = { Value = -0.80 }
-    --TraitData.MaximumChillBonusSlow.PropertyChanges[1].IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.MaximumChillBonusSlow.PropertyChanges[2].IdenticalMultiplier = { Value = -0.60 }
-    --TraitData.MaximumChillBonusSlow.RarityLevels.Rare = { Multiplier = 1.5 }
-    --TraitData.MaximumChillBonusSlow.RarityLevels.Epic = { Multiplier = 2.0 }
-    --TraitData.MaximumChillBonusSlow.RarityLevels.Heroic = { Multiplier = 2.5 }
-    --TraitData.FountainDamageBonusTrait.FountainDamageBonus.DecimalPlaces = 3
 end

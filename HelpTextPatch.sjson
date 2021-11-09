@@ -1,0 +1,60 @@
+{
+    Texts = {
+        "_sequence" = true
+        492 = {
+            "_replace" = 1
+            Id = "ChaosBlessingMeleeTrait_Complete"
+            Description = "Your {#BoldFormat}{$Keywords.Attack} {#PreviousFormat}deals {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}damage."
+        }
+        494 = {
+            "_replace" = 1
+            Id = "ChaosBlessingSecondaryTrait_Complete"
+            Description = "Your {#BoldFormat}{$Keywords.Special} {#PreviousFormat} deals {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}damage."
+        }
+        496 = {
+            "_replace" = 1
+            Id = "ChaosBlessingDashAttackTrait_Complete"
+            Description = "Your {#BoldFormat}{$Keywords.BlinkStrike} {#PreviousFormat}deals {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}damage."
+        }
+        498 = {
+            "_replace" = 1
+            Id = "ChaosBlessingRangedTrait_Complete"
+            Description = "Your {#BoldFormat}{$Keywords.Cast} {#PreviousFormat}deals {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}damage."
+        }
+        500 = {
+            "_replace" = 1
+            Id = "ChaosBlessingAmmoTrait_Complete"
+            Description = "You have {#AltUpgradeFormat}+{$TooltipData.Increase1}{!Icons.Ammo}{#PreviousFormat}."
+        }
+        502 = {
+            "_replace" = 1
+            Id = "ChaosBlessingMaxHealthTrait_Complete"
+            Description = "You have {#AltUpgradeFormat}+{$TooltipData.Increase1}{!Icons.HealthUp_Small}{#PreviousFormat}."
+        }
+        506 = {
+            "_replace" = 1
+            Id = "ChaosBlessingBoonRarityTrait_Complete"
+            Description = "{#BoldFormat}{$Keywords.GodBoonPlural} {#PreviousFormat}have {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}chance to be {#RareFormat}Rare {#PreviousFormat}or better."
+        }
+        508 = {
+            "_replace" = 1
+            Id = "ChaosBlessingMoneyTrait_Complete"
+            Description = "Any {!Icons.Currency_Small} you find is worth {#AltUpgradeFormat}{$TooltipData.DisplayDelta1}{#PreviousFormat}."
+        }
+        510 = {
+            "_replace" = 1
+            Id = "ChaosBlessingMetapointTrait_Complete"
+            Description = "Any {!Icons.MetaPoint_Small} and {!Icons.GemSmall} you find are worth {#AltUpgradeFormat}{$TooltipData.DisplayDelta1}{#PreviousFormat}."
+        }
+        512 = {
+            "_replace" = 1
+            Id = "ChaosBlessingAlphaStrikeTrait_Complete"
+            Description = "You deal {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}damage striking undamaged foes."
+        }
+        514 = {
+            "_replace" = 1
+            Id = "ChaosBlessingBackstabTrait_Complete"
+            Description = "You deal {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}damage striking foes from behind."
+        }
+    }
+}

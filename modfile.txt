@@ -1,1 +1,3 @@
-Import "Scripts"
+Import "MorePomOptions.lua"
+To "Game\Text\en\HelpText.en.sjson"
+SJSON "HelpTextPatch.sjson"
