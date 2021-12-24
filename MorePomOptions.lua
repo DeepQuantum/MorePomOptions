@@ -27,9 +27,8 @@ ModUtil.BaseOverride ( "GetAllUpgradeableGodTraits", function ( )
 end, MorePomOptions )
 
 --[[ TODO:
-    -  Make it so that the Pom Menu correctly displays the values instead of the diminishing percent changes (@SetTraitTextData)
-    -  Revisit Legendary/Duo Boons
-    -  Test
+    -  Also make work for normal gods, not just Chaos (i.e. Poseidons Treasure)
+    -  Write TXT/Finish Up
     -  Release
 --]]
 
