@@ -1,6 +1,30 @@
 {
     Texts = {
         "_sequence" = true
+        459 = {
+            "_replace" = 1
+            Id = "MoveSpeedTrait"
+            DisplayName = "Greater Haste"
+            Description = "You move faster. \n {!Icons.Bullet}{#PropertyFormat}Move Speed: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1}"
+        }
+        460 = {
+            "_replace" = 1
+            Id = "RushRallyTrait"
+            DisplayName = "Quick Recovery"
+            Description = "After taking damage, quickly {$Keywords.Dash} to recover some {!Icons.Health_Small_Tooltip} you just lost. \n {!Icons.Bullet}{#PropertyFormat}Life Recovered: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}{#ItalicFormat}of damage taken"
+        }
+        461 = {
+            "_replace" = 1
+            Id = "DodgeChanceTrait"
+            DisplayName = "Greater Evasion"
+            Description = "Whenever you are hit, you have a chance to {$Keywords.Dodge} automatically. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Dodge} Chance: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1}"
+        }
+        462 = {
+            "_replace" = 1
+            Id = "HermesWeaponTrait"
+            DisplayName = "Swift Strike"
+            Description = "Your {$Keywords.Attack} is faster. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Attack} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1}"
+        }
         492 = {
             "_replace" = 1
             Id = "ChaosBlessingMeleeTrait_Complete"
@@ -24,12 +48,12 @@
         500 = {
             "_replace" = 1
             Id = "ChaosBlessingAmmoTrait_Complete"
-            Description = "You have {#AltUpgradeFormat}+{$TooltipData.Increase1}{!Icons.Ammo}{#PreviousFormat}."
+            Description = "You have {#BoldFormatGraftNoColor}+{#UpgradeFormat}{$TooltipData.Increase1}{!Icons.Ammo}{#PreviousFormat}."
         }
         502 = {
             "_replace" = 1
             Id = "ChaosBlessingMaxHealthTrait_Complete"
-            Description = "You have {#AltUpgradeFormat}+{$TooltipData.Increase1}{!Icons.HealthUp_Small}{#PreviousFormat}."
+            Description = "You have {#BoldFormatGraftNoColor}+{#UpgradeFormat}{$TooltipData.Increase1}{!Icons.HealthUp_Small}{#PreviousFormat}."
         }
         506 = {
             "_replace" = 1
@@ -55,6 +79,26 @@
             "_replace" = 1
             Id = "ChaosBlessingBackstabTrait_Complete"
             Description = "You deal {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}damage striking foes from behind."
+        }
+        10000 = {
+            Id = "MoveSpeedTrait_Initial"
+            DisplayName = "Greater Haste"
+            Description = "You move faster. \n {!Icons.Bullet}{#PropertyFormat}Move Speed: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipSpeed}%"
+        }
+        10001 = {
+            Id = "RushRallyTrait_Initial"
+            DisplayName = "Quick Recovery"
+            Description = "After taking damage, quickly {$Keywords.Dash} to recover some {!Icons.Health_Small_Tooltip} you just lost. \n {!Icons.Bullet}{#PropertyFormat}Life Recovered: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipHeal}% {#PreviousFormat}{#ItalicFormat}of damage taken"
+        }
+        10002 = {
+            Id = "DodgeChanceTrait_Initial"
+            DisplayName = "Greater Evasion"
+            Description = "Whenever you are hit, you have a chance to {$Keywords.Dodge} automatically. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Dodge} Chance: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipChance:P}"
+        }
+        10003 = {
+            Id = "HermesWeaponTrait_Initial"
+            DisplayName = "Swift Strike"
+            Description = "Your {$Keywords.Attack} is faster. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Attack} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipSpeedIncrease:P}"
         }
     }
 }

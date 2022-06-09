@@ -19,7 +19,7 @@ ModUtil.BaseOverride ( "GetAllUpgradeableGodTraits", function ( )
     local traitNames = {}
 	for _, trait in pairs( CurrentRun.Hero.Traits ) do
  		if trait.RemainingUses == nil and (IsGodTrait(trait.Name) or TraitData[trait.Name].Icon ~= nil and
-         string.find(TraitData[trait.Name].Icon, "Hermes") or string.find(trait.Name, "ChaosBlessing")) then
+        string.find(TraitData[trait.Name].Icon, "Hermes") or string.find(trait.Name, "ChaosBlessing")) then
 			traitNames[trait.Name] = true
         end
 	end
@@ -27,10 +27,20 @@ ModUtil.BaseOverride ( "GetAllUpgradeableGodTraits", function ( )
 end, MorePomOptions )
 
 --[[ TODO:
-    -  Also make work for normal gods, not just Chaos (i.e. Poseidons Treasure)
+    -  Write the remaining text patches while simoultaneously checking the stats for all mods
     -  Write TXT/Finish Up
     -  Release
 --]]
+
+--function AddNewTextFormat () 
+--    ModUtil.MapSetTable(TextFormats, {
+--        PlusFormat =
+--        {
+--            
+--        }
+--    }
+--)
+--end
 
 function OverrideTraits ()
     ModUtil.MapNilTable(TraitData,
@@ -86,9 +96,9 @@ function OverrideTraits ()
                     {
                         Value = -0.35
                     },
-                    ExtractValues =
+                    ExtractValue =
                     {
-                        ExtractAs = "ToolTipDuration",
+                        ExtractAs = "TooltipDuration",
                         DecimalPlaces = 2.00
                     }
                 },
@@ -100,9 +110,9 @@ function OverrideTraits ()
                     {
                         Value = -0.35
                     },
-                    ExtractValues =
+                    ExtractValue =
                     {
-                        ExtractAs = "ToolTipDuration",
+                        ExtractAs = "TooltipDuration",
                         DecimalPlaces = 2.00
                     }
                 }
