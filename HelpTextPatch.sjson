@@ -1,29 +1,59 @@
 {
     Texts = {
         "_sequence" = true
-        459 = {
+        455 = {
+            "_replace" = 1
+            Id = "RapidCastTrait"
+            DisplayName = "Flurry Cast"
+            Description = "Hold {$Keywords.Cast} to fire in rapid succession. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Cast} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1}"
+        }
+        457 = {
             "_replace" = 1
             Id = "MoveSpeedTrait"
             DisplayName = "Greater Haste"
             Description = "You move faster. \n {!Icons.Bullet}{#PropertyFormat}Move Speed: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1}"
         }
-        460 = {
+        458 = {
             "_replace" = 1
             Id = "RushRallyTrait"
             DisplayName = "Quick Recovery"
             Description = "After taking damage, quickly {$Keywords.Dash} to recover some {!Icons.Health_Small_Tooltip} you just lost. \n {!Icons.Bullet}{#PropertyFormat}Life Recovered: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}{#ItalicFormat}of damage taken"
         }
-        461 = {
+        459 = {
             "_replace" = 1
             Id = "DodgeChanceTrait"
             DisplayName = "Greater Evasion"
             Description = "Whenever you are hit, you have a chance to {$Keywords.Dodge} automatically. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Dodge} Chance: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1}"
         }
-        462 = {
+        460 = {
             "_replace" = 1
             Id = "HermesWeaponTrait"
             DisplayName = "Swift Strike"
-            Description = "Your {$Keywords.Attack} is faster. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Attack} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1}"
+            Description = "Your {$Keywords.Attack} is faster. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Attack} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.ExtractEntry:P}"
+        }
+        461 = {
+            "_replace" = 1
+            Id = "HermesSecondaryTrait"
+            DisplayName = "Swift Flourish"
+            Description = "Your {$Keywords.Special} is faster. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Special} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta2}"
+        }
+        462 = {
+            "_replace" = 1
+            Id = "HermesShoutDodge"
+            DisplayName = "Second Wind"
+            Description = "After using {$Keywords.Wrath}, gain {$Keywords.Dodge} chance and move speed for {#BoldFormatGraft}{$TooltipData.TooltipDuration} Sec.{#PreviousFormat} \n {!Icons.Bullet}{#PropertyFormat}Bonus Dodge Chance & Move Speed: \Column 380 {#PreviousFormat}{$TooltipData.DisplayDelta2}"
+        }
+        467 = {
+            "_replace" = 1
+            Id = "ChamberGoldTrait"
+            DisplayName = "Side Hustle"
+            Description = "Poopoo Each time you enter a {$Keywords.RoomAlt}, gain a bit of wealth. \n {!Icons.Bullet}{#PropertyFormat}Bonus Wealth per {$Keywords.RoomAlt}: \Column 380 {#UpgradeFormat}+{$TooltipData.MoneyPerRoom} {!Icons.Currency_Small}"
+        }
+        479 = {
+            "_replace" = 1
+            Id = "SpeedDamageTrait"
+            DisplayName = "Rush Delivery"
+            Description = "You deal bonus damage based on any bonus move speed. \n {!Icons.Bullet}{#PropertyFormat}Bonus Damage From Bonus Speed: \Column 380 {#UpgradeFormat}{$TooltipData.DisplayDelta1}"
         }
         492 = {
             "_replace" = 1
@@ -80,6 +110,11 @@
             Id = "ChaosBlessingBackstabTrait_Complete"
             Description = "You deal {#AltUpgradeFormat}{$TooltipData.DisplayDelta1} {#PreviousFormat}damage striking foes from behind."
         }
+        9999 = {
+            Id = "RapidCastTrait_Initial"
+            DisplayName = "Flurry Cast"
+            Description = "Hold {$Keywords.Cast} to fire in rapid succession. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Cast} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipSpeedIncrease:P}"
+        }
         10000 = {
             Id = "MoveSpeedTrait_Initial"
             DisplayName = "Greater Haste"
@@ -99,6 +134,26 @@
             Id = "HermesWeaponTrait_Initial"
             DisplayName = "Swift Strike"
             Description = "Your {$Keywords.Attack} is faster. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Attack} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipSpeedIncrease:P}"
+        }
+        10004 = {
+            Id = "HermesSecondaryTrait_Initial"
+            DisplayName = "Swift Flourish"
+            Description = "Your {$Keywords.Special} is faster. \n {!Icons.Bullet}{#PropertyFormat}{$Keywords.Special} Speed: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipSpeedIncrease:P}"
+        }
+        10005 = {
+            Id = "HermesShoutDodge_Initial"
+            DisplayName = "Second Wind"
+            Description = "After using {$Keywords.Wrath}, gain {$Keywords.Dodge} chance and move speed for {#BoldFormatGraft}{$TooltipData.TooltipDuration} Sec.{#PreviousFormat} \n {!Icons.Bullet}{#PropertyFormat}Bonus Dodge Chance & Move Speed: \Column 380 {#PreviousFormat}{$TooltipData.NewTotal1}"
+        }
+        10006 = {
+            Id = "ChamberGoldTrait_Initial"
+            DisplayName = "Side Hustle"
+            Description = "Each time you enter a {$Keywords.RoomAlt}, gain a bit of wealth. \n {!Icons.Bullet}{#PropertyFormat}Bonus Wealth per {$Keywords.RoomAlt}: \Column 380 {#UpgradeFormat}+{$TooltipData.MoneyPerRoom} {!Icons.Currency_Small}"
+        }
+        10007 = {
+            Id = "SpeedDamageTrait_Initial"
+            DisplayName = "Rush Delivery"
+            Description = "You deal bonus damage based on any bonus move speed. \n {!Icons.Bullet}{#PropertyFormat}Bonus Damage From Bonus Speed: \Column 380 {#UpgradeFormat}{$TooltipData.TooltipBonus}%"
         }
     }
 }
