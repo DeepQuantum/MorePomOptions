@@ -26,21 +26,6 @@ ModUtil.BaseOverride ( "GetAllUpgradeableGodTraits", function ( )
 	return traitNames
 end, MorePomOptions )
 
---[[ TODO:
-    -  Write the remaining text patches while simoultaneously checking the stats for all mods
-    -  Write TXT/Finish Up
-    -  Release
---]]
-
---function AddNewTextFormat () 
---    ModUtil.MapSetTable(TextFormats, {
---        PlusFormat =
---        {
---            
---        }
---    }
---)
---end
 
 function OverrideTraits ()
     ModUtil.MapNilTable(TraitData,
