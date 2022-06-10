@@ -57,13 +57,6 @@ function OverrideTraits ()
         MaximumChillBonusSlow = { RequiredFalseTrait = true },
         DoorHealTrait = { RequiredFalseTraits = true },
         FountainDamageBonusTrait = { RequiredFalseTrait = true },
-        HermesShoutDodge = { RequiredFalseTraits = true },
-        MoveSpeedTrait = { RequiredFalseTrait = true },
-        SpeedDamageTrait = { RequiredFalseTraits = true },
-        HermesSecondaryTrait = { RequiredFalseTraits = true },
-        DodgeChanceTrait = { RequiredFalseTrait = true },
-        RushRallyTrait = { RequiredFalseTrait = true },
-        ChamberGoldTrait = { RequiredFalseTraits = true },
     })
 
     ModUtil.MapSetTable(TraitData,
