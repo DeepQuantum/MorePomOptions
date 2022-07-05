@@ -18,8 +18,7 @@ end)
 ModUtil.BaseOverride ( "GetAllUpgradeableGodTraits", function ( )
     local traitNames = {}
 	for _, trait in pairs( CurrentRun.Hero.Traits ) do
- 		if trait.RemainingUses == nil and (IsGodTrait(trait.Name) or TraitData[trait.Name].Icon ~= nil 
-		or string.find(trait.Name, "ChaosBlessing")) then
+ 		if trait.RemainingUses == nil and IsGodTrait(trait.Name) or string.find(trait.Name, "ChaosBlessing") then
 			traitNames[trait.Name] = true
         end
 	end
